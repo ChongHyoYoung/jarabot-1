@@ -96,7 +96,8 @@ void loop() {
     //Serial.println(rcvStr);
   } 
 
-  if ((rcvStr != "") && (strLength == 14) ) {  //splitting a string....
+  //if ((rcvStr != "") && (strLength == 14) ) {  //splitting a string....
+  if ((rcvStr.startsWith("pwm,")) && (strLength >= 10)) {
     // 수신된 문자열을 쉼표로 분리하여 데이터 추출
     int firstCommaIndex = rcvStr.indexOf(','); // 첫 번째 쉼표의 인덱스
     int secondCommaIndex = rcvStr.indexOf(',', firstCommaIndex + 1); // 두 번째 쉼표의 인덱스
